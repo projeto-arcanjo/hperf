@@ -94,15 +94,17 @@ public class FederateController {
 	echo ""
     
 */    
+    
+ // Driver pode ser { throughput-test, latency-test ou lifecycle-test }    
+    
     @RequestMapping(value = "/start", method = RequestMethod.GET, produces=MediaType.APPLICATION_JSON_UTF8_VALUE )
 	public @ResponseBody String start( 
-			@RequestParam(value = "interval", required = true) Integer interval,
 			@RequestParam(value = "federatename", required = true) String federateName,
 			@RequestParam(value = "driver", required = true) String driver,
 			@RequestParam(value = "peers", required = true) String peers
 		) {
    		
-    	federateService.start( interval, federateName, driver, peers );
+    	federateService.start( federateName, driver, peers );
     	return "ok";
 	}
         

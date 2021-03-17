@@ -56,14 +56,11 @@ public class FederateService {
     }
 
     
-    public void start( Integer interval, String federateName, String driver, String peers ) {
-		// Driver pode ser { throughput-test, latency-test ou lifecycle-test }
-		driver = "--" + driver;
-		peers = "--peers " + peers;
-		federateName = "--federate-name " + federateName;
-		String feName = "--federation-name " + this.federationName;
+    public void start( String federateName, String driver, String peers ) {
 		
-		this.args = new String[]{driver, peers, federateName, feName};
+		driver = "--" + driver;
+		
+		this.args = new String[]{driver, "--peers", peers, "--federate-name", federateName, "--federation-name", this.federationName};
 		
 		try {
 			HPerfMain.init( this.modules, this.args);
