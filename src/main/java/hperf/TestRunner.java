@@ -42,7 +42,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import br.com.cmabreu.services.FederateService;
 import hla.rti1516e.AttributeHandleSet;
 import hla.rti1516e.CallbackModel;
 import hla.rti1516e.RTIambassador;
@@ -68,13 +70,13 @@ public class TestRunner
 	//----------------------------------------------------------
 	//                   INSTANCE VARIABLES
 	//----------------------------------------------------------
-	private Logger logger;
 	private Configuration configuration;
 	
 	private RTIambassador rtiamb;
 	private FederateAmbassador fedamb;
 	private Storage storage;
 	private IDriver driver;
+	private Logger logger = LoggerFactory.getLogger( TestRunner.class );
 
 	//----------------------------------------------------------
 	//                      CONSTRUCTORS
@@ -177,17 +179,8 @@ public class TestRunner
 	/**
 	 * Set up a default logger with a basic logging pattern.
 	 */
-	private void initializeLogging()
-	{
-		/*
-		LoggingConfigurator.initializeLogging( configuration.getLogLevel() );
-		this.logger = LoggingConfigurator.getLogger( configuration.getFederateName() ); 
-		this.logger.setLevel( Level.INFO );
-
-		// this is a jvm federation, but we are not the master, so no logger for us
-		if( configuration.isJvmFederation() && !configuration.isJvmMaster() )
-			this.logger.setLevel( Level.OFF );
-		*/
+	private void initializeLogging(){	
+		
 	}
 
 	private IDriver loadDriver( Configuration configuration, Storage storage ) throws Exception
