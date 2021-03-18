@@ -22,7 +22,10 @@ public class FederateService {
     String fomFolder;	
 
     @Value("${federation.name}")
-    String federationName;	
+    String federationName;
+    
+    @Value("${federation.federateName}")
+    String federateName;	
     
     @PreDestroy
 	public void onExit() {
@@ -41,7 +44,7 @@ public class FederateService {
     	// eh muito mais facil e rapido iniciar o HPERF original pela sua classe Main
     	// do que tentar entender o codigo original e transcrever para ca.
 
-    	
+    	if( !fomFolder.endsWith("/") ) fomFolder = fomFolder + "/";
 		this.modules = new URL[]{
 			// The MIM file MUST be present	
 			(new File( fomFolder + "HLAstandardMIM.xml")).toURI().toURL(),
@@ -56,11 +59,11 @@ public class FederateService {
     }
 
     
-    public void start( String federateName, String driver, String peers ) {
+    public void start( String driver, String peers ) {
 		
 		driver = "--" + driver;
 		
-		this.args = new String[]{driver, "--peers", peers, "--federate-name", federateName, "--federation-name", this.federationName};
+		this.args = new String[]{driver, "--peers", peers, "--federate-name", this.federateName, "--federation-name", this.federationName};
 		
 		try {
 			HPerfMain.init( this.modules, this.args);
