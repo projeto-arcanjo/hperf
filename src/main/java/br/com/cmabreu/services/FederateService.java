@@ -63,7 +63,7 @@ public class FederateService {
 		
 		driver = "--" + driver;
 		
-		this.args = new String[]{driver, "--peers", peers, "--federate-name", this.federateName, "--federation-name", this.federationName};
+		this.args = new String[]{driver, "--peers", peers, "--federate-name", this.federateName, "--federation-name", this.federationName, "--callback-immediate"};
 		
 		try {
 			HPerfMain.init( this.modules, this.args);
