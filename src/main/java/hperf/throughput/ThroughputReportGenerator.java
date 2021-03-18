@@ -47,7 +47,7 @@ public class ThroughputReportGenerator
 	//----------------------------------------------------------
 	public ThroughputReportGenerator( Configuration configuration, Storage storage )
 	{
-		this.logger = LoggingConfigurator.getLogger( configuration.getFederateName() );
+		this.logger = LoggingConfigurator.getLogger( ThroughputReportGenerator.class );
 		this.configuration = configuration;
 		this.storage = storage;
 	}

@@ -49,23 +49,22 @@ public class LoggingConfigurator
 	//----------------------------------------------------------
 	public static synchronized void initializeLogging( String level )
 	{
-		if( CONFIGURED )
-			return;
+		if( CONFIGURED ) return;
 
 		// create the appender
 //		PatternLayout layout = new PatternLayout( "%-5p [%c]: %x%m%n" );
 //		ConsoleAppender appender = new ConsoleAppender( layout, ConsoleAppender.SYSTEM_OUT );
 //		appender.setThreshold( Level.TRACE ); // output restricted at logger level, not appender
 		
-		Logger logger = LoggerFactory.getLogger( "hp" );
+		// Logger logger = LoggerFactory.getLogger( "hp" );
 		//logger.addAppender( appender );
 		//logger.setLevel( Level.toLevel(level) );
 		
 		CONFIGURED = true;
 	}
 	
-	public static Logger getLogger( String federateName )
+	public static Logger getLogger( Class<?> name )
 	{	
-		return LoggerFactory.getLogger( "hp."+federateName );
+		return LoggerFactory.getLogger( name );
 	}
 }

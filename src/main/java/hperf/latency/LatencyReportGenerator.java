@@ -57,7 +57,7 @@ public class LatencyReportGenerator
 	//----------------------------------------------------------
 	public LatencyReportGenerator( Configuration configuration, Storage storage )
 	{
-		this.logger = LoggingConfigurator.getLogger( configuration.getFederateName() );
+		this.logger = LoggingConfigurator.getLogger( LatencyReportGenerator.class );
 		this.storage = storage;
 	}
 

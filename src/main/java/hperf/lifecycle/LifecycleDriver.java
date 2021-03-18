@@ -102,7 +102,7 @@ public class LifecycleDriver implements IDriver
 	{
 		this.configuration = configuration;
 		this.storage = storage;
-		this.logger = LoggingConfigurator.getLogger( configuration.getFederateName() );
+		this.logger = LoggingConfigurator.getLogger( LifecycleDriver.class );
 	}
 
 	public void execute( RTIambassador rtiamb, FederateAmbassador fedamb ) throws RTIexception

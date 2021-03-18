@@ -472,7 +472,7 @@ public class ThroughputDriver implements IDriver
 	public void configure( Configuration configuration, Storage storage )
 	{
 		this.configuration = configuration;
-		this.logger = LoggingConfigurator.getLogger( configuration.getFederateName() );
+		this.logger = LoggingConfigurator.getLogger( ThroughputDriver.class );
 		this.storage = storage;
 		this.fedamb = new FederateAmbassador( configuration, storage );
 	}
