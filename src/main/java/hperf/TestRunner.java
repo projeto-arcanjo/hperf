@@ -146,11 +146,31 @@ public class TestRunner
 		/////////////////////////
 		// HPerfMain test execution //
 		/////////////////////////
-		this.driver.execute( rtiamb, fedamb );
+		// this.driver.execute( rtiamb, fedamb );
 
 		// Get out of here
+		// this.resignAndDestroy();
+	}
+	
+	
+	public void inicia() throws Exception {
+		this.driver.execute( rtiamb, fedamb );
+	}
+	
+	public void quit() throws Exception {
 		this.resignAndDestroy();
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	/**
 	 * This executes the driver and leaves the lifecycle management entirely to it.

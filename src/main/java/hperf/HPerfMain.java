@@ -59,6 +59,17 @@ public class HPerfMain
 			new TestRunner(configuration).execute( modules );
 	}
 
+	
+	public static void inicia() {
+		// testRunner.inicia();
+	}
+	
+	public static void quit() {
+		// testRunner.quit();
+	}
+	
+	
+	
 	private static void executeJvmFederation( Configuration configuration, URL[] modules )
 	{
 		System.setProperty( "portico.connection", "jvm" );

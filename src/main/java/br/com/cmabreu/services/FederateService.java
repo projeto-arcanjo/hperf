@@ -72,8 +72,14 @@ public class FederateService {
 		}
 	}
 
- 	
 
+    public void quit() {
+    	HPerfMain.quit();
+    }
+    
+    public void inicia() {
+    	HPerfMain.inicia();
+    }
 	
 	
 }
